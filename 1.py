@@ -5,7 +5,7 @@ a,b = [float(i) for i in [a,b]]
 
 
 
-try:   
+try:
     act = {
     '+': a+b,
     '-': a-b,
@@ -18,5 +18,4 @@ try:
     print(act[c])
 
 except ZeroDivisionError as err:
-    print('Деление на 0!')
- 
+    print('Деление на 0')
