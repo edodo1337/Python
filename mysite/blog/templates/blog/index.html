@@ -6,12 +6,13 @@
   Posts list
 {% endblock %}
 
-{% block content %}
 
-    {% for name in names %}
+
+{% block content %}
+  <h1 class="mb-5">Posts</h1>
+    {% for post in posts %}
         <p>
-          {{name}}
+          {{post.Title}}
         </p>
     {% endfor %}
-
 {% endblock %}
