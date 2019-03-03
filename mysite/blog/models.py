@@ -7,5 +7,8 @@ class Post(models.Model):
     body = models.TextField(blank=True, db_index=True)
     date_pub = models.DateTimeField(auto_now_add=True)
 
+
+    def get_absolute_url(self):
+        
     def __str__(self):
         return '{}'.format(self.title)
