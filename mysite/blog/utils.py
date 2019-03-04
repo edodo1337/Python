@@ -10,4 +10,4 @@ class ObjectDetailMixin:
     def get(self, request, slug):
         #post = Post.objects.get(slug__iexact=slug)
         object = get_object_or_404(self.model, slug__iexact=slug)
-        return render(request, self.template, context={'post':post})
+        return render(request, self.template, context={self.model.__name__.lower():object})
