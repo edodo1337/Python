@@ -16,11 +16,14 @@ class TagDetail(ObjectDetailMixin, View):
 class PostCreate(View):
     def get(self, request):
         form = PostForm()
-        return render(request, 'blog/post_create_form.html', context={'posts': posts})
+        return render(request, 'blog/post_create_form.html', context={'form': form})
 
     def post(self, request):
         bound_form = Post.Forms(request.POST)
-
+        if bound_form.is_valid():
+            new_post = bound_form_save()
+            return redirect(new_post)
+        return render(request, 'blog/post_create_form.html', context={'form':bound_form})
 
 def posts_list(request):
     posts = Post.objects.all()
