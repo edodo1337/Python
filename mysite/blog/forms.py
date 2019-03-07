@@ -1,9 +1,13 @@
 from django import forms
-
+from .models import Tag
+from django.core.exception import Val
 
 class TagForm(forms.Form):
     title = forms.CharField(max_length=50)
     slug = forms.CharField(max_length=50)
+
+    def clean_slug(self):
+        new_slug = self.cleaned_data['slug']
 
     def save(self):
         new_tag = Tag.objects.create(
