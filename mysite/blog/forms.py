@@ -39,10 +39,10 @@ class PostForm(forms.ModelForm):
         fields = ['title', 'slug', 'body', 'tags']
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form_control'}),
-            'slug': forms.TextInput(attrs={'class': 'form_control'}),
-            'body': forms.Textarea(attrs={'class': 'form_control'}),
-            'tags': forms.SelectMultiple(attrs={'class': 'form_control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
+            'tags': forms.SelectMultiple(attrs={'class': 'form-control'}),
 
         }
 
