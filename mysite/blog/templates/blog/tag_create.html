@@ -2,15 +2,11 @@
 
 
 {% block title %}
-
   Tag Create - {{ block.super }}
-
 {% endblock %}
 
 
-
 {% block content %}
-
   <form action="{% url 'tag_create_url' %}" method="post">
     {% csrf_token %}
 
@@ -21,8 +17,6 @@
                  {{ field.errors }}
               </div>
           {% endif %}
-
-
           {{ field.label }}
           {{ field }}
       </div>
