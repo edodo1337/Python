@@ -27,6 +27,15 @@ class TagUpdate(View):
         bound_form = TagForm(instance=tag)
         return render(request, 'blog/tag_update_form.html', context={'form': bound_form, 'tag':tag})
 
+    def post(self, request, slug):
+        tag = Tag.objects.get(slug__iexact=slug)
+        bound_form = TagForm(request.POST, instance=tag)
+
+        if bound_form.is_valid():
+            new_tag = bound_form.save()
+            return redirect(new_tag)
+        return render(request, 'blog/tag_update_form', context={'form': bound_form, 'tag':tag})
+
 def posts_list(request):
     posts = Post.objects.all()
     return(render(request, 'blog/index.html', context={'posts': posts}))
