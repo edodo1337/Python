@@ -7,7 +7,6 @@ class TagForm(forms.ModelForm):
     #slug = forms.CharField(max_length=50)
     #title.widget.attrs.update({'class':'form-control'})
     #slug.widget.attrs.update({'class':'form-control'})
-
     class Meta:
         model = Tag
         fields = ['title','slug']

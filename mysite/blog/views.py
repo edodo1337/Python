@@ -23,6 +23,8 @@ class TagCreate(ObjectCreateMixin, View):
 
 class TagUpdate(View):
     def get(self, request, slug):
+        tag = Tag.objects.get(slug__iexact=slug)
+        bound_form = TagForm(insance=tag)
 
 def posts_list(request):
     posts = Post.objects.all()
