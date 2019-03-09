@@ -19,9 +19,9 @@ class PostCreate(View):
         return render(request, 'blog/post_create_form.html', context={'form': form})
 
     def post(self, request):
-        bound_form = Post.Forms(request.POST)
+        bound_form = PostForm(request.POST)
         if bound_form.is_valid():
-            new_post = bound_form_save()
+            new_post = bound_form.save()
             return redirect(new_post)
         return render(request, 'blog/post_create_form.html', context={'form':bound_form})
 
