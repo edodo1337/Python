@@ -2,12 +2,12 @@
 
 
 {% block title %}
-  Create Post - {{block.super}}
+  Edit Post - {{block.super}}
 {% endblock %}
 
 
 {% block content %}
-  <form  class="" action="{% url 'post_create_url' %}" method="post">
+  <form  class="" action="{{ post.get_update_url }}" method="post">
       {% csrf_token %}
 
       {% for field in form %}
@@ -22,7 +22,7 @@
           </div>
       {% endfor %}
 
-      <button type="submit" name="button">Create Post</button>
+      <button type="Submit" name="button">Update Post</button>
 
   </form>
 {% endblock %}
