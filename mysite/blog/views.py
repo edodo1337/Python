@@ -22,7 +22,7 @@ class TagCreate(ObjectCreateMixin, View):
     template = 'blog/tag_create.html'
 
 class TagUpdate(View):
-    def get(self, request, slug)
+    def get(self, request, slug):
 
 def posts_list(request):
     posts = Post.objects.all()
