@@ -8,11 +8,15 @@
 {% endblock %}
 
 {% block content %}
-
-  <h1 class="mb-5">
+    <h1 class="mb-5">
     {{post.title}}
   </h1>
   <p>
     {{post.body}}
   </p>
+  <a class="btn btn-outline-primary" href="{% url 'post_update_url' slug=post.slug%}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+
+
+
+
 {% endblock %}
