@@ -30,8 +30,8 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def get_update_url(self):
-        return reverse('post_update_url', kwargs={'slug':self.slug})
+    def get_delete_url(self):
+        return reverse('post_delete_url', kwargs={'slug':self.slug})
 
 
 
