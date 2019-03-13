@@ -11,6 +11,14 @@
     <h1 class="mb-5">
     {{post.title}}
   </h1>
+  {% if post.img %}
+  <style>
+    img {
+      padding: 20px;
+    }
+  </style>
+    <img src="{{ post.img.url  }}" width="400" >
+  {%endif%}
   <p>
     {{post.body}}
   </p>

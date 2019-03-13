@@ -18,7 +18,16 @@
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">{{post.body | truncatewords:15}}</p>
-        <a href="{{ post.get_absolute_url }}" class="btn btn-secondary">Read</a>
+        {% if post.img %}
+        <style>
+          img {
+            padding: 20px;
+          }
+        </style>
+          <img src="{{ post.img.url  }}" width="500" >
+
+        {%endif%}
+        <div><a href="{{ post.get_absolute_url }}" class="btn btn-secondary">Read</a></div>
       </div>
     </div>
     {% endfor %}
