@@ -35,13 +35,14 @@ class TagForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'slug', 'body', 'tags']
+        fields = ['title', 'slug', 'body', 'tags', 'img']
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'slug': forms.TextInput(attrs={'class': 'form-control'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
             'tags': forms.SelectMultiple(attrs={'class': 'form-control'}),
+            'img': forms.FileInput(attrs={'accept': 'images/'}),
         }
 
     def clean_slug(self):
@@ -49,3 +50,4 @@ class PostForm(forms.ModelForm):
         if new_slug == 'create':
             raise ValidationError('Wrong slug')
         return new_slug
+

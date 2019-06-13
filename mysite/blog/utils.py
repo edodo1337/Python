@@ -27,6 +27,7 @@ class ObjectCreateMixin:
 
         if bound_form.is_valid():
             new_obj = bound_form.save()
+            print(request.FILES['img'])
             return redirect(new_obj)
         return render(request, self.template, context={'form': bound_form})
 

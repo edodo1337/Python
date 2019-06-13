@@ -3,7 +3,7 @@ from django.views.generic import View
 from django.urls import reverse
 from .models import Post, Tag
 from .utils import *
-from .forms import TagForm, PostForm
+from .forms import *
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -69,3 +69,9 @@ def tags_list(request):
 #def tags_detail(request, slug):
 #    tag = Tag.objects.get(slug__iexact=slug)
 #    return render(request,'blog/tags_detail.html', context={'tag': tag})
+
+def upload_img(request):
+    if request.method == 'POST':
+        form = UploadImgForm(request.POST, request.FILES)
+        if form.is_valid():
+            pass
