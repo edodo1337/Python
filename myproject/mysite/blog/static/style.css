@@ -1,0 +1,53 @@
+body{
+   background-color: #D9EAEC; /* Цвет фона веб-страницы */
+   }
+
+.navbar-bg{
+    background-color: #D9EAEC;
+}
+
+.navbar-dark{
+    background-color: #C4DEE2;
+    border-color: #88BBC3;
+}
+
+.navbar-dark:hover{
+    background-color: #B0D2D8;
+}
+
+.article-body{
+
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+
+    padding: 5px; /* Поля вокруг текста */
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 15em;
+    line-height: 1.5em;
+}
+
+.card{
+    background-color: #c3e1e8;
+    -webkit-box-shadow: 5px 6px 17px -8px rgba(0,0,0,0.85);
+    -moz-box-shadow: 5px 6px 17px -8px rgba(0,0,0,0.85);
+    box-shadow: 5px 6px 17px -8px rgba(0,0,0,0.85);
+}
+
+
+* {
+    font-family: Helvetica;
+}
+
+a {
+    color: #3e6b75;
+}
+
+a:hover {
+    color: #1e3c42;
+    text-decoration: none;
+}
+
+.under-text {
+    margin-left: 20px;
+    opacity: 0.5;
+}
